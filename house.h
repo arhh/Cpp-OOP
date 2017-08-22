@@ -1,4 +1,5 @@
 #include <string>
+using namespace std;
 
 class House {
     private:
@@ -17,4 +18,5 @@ class House {
         void setBreadth(int);
         void setHeight(int);
         void setDescription(string);
-}
+};
+
