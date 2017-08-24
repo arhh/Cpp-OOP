@@ -1,6 +1,7 @@
 #include <string>
 using namespace std;
 
+// Class representing a generic house
 class House {
     private:
         int roomCount;

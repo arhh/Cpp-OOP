@@ -12,57 +12,70 @@ House::House(int roomCount, float length, float breadth, float height, string de
 }
 
 House::~House() {
-    cout << "Demolishing the house" << endl;
+    cout << "Demolishing house" << endl;
 }
 
+// Getter for House instance variables
 int House::getter(int variable) {
     return variable;
 }
 
+// Over-loaded getter for House instance variables
 string House::getter(string variable) {
     return variable;
 }
 
+// Over-loaded getter for House instance variables
 float House::getter(float variable) {
     return variable;
 }
 
+// Getter for roomCount variable
 int House::getRoomCount() {
     return getter(roomCount);
 }
 
+// Getter for length variable
 float House::getLength() {
     return getter(length);
 }
 
+// Getter for breadth variable
 float House::getBreadth() {
     return getter(breadth);
 }
 
+// Getter for height variable
 float House::getHeight() {
     return getter(height);
 }
 
+// Getter for house description variable
 string House::getDescription() {
     return getter(description);
 }
 
+// Setter for roomCount variable
 void House::setRoomCount(int roomCount) {
     this -> roomCount = roomCount;
 }
 
+// Setter for length variable
 void House::setLength(float length) {
     this -> length = length;
 }
 
+// Setter for breadth variable
 void House::setBreadth(float breadth) {
     this -> breadth = breadth;
 }
 
+// Setter for height variable
 void House::setHeight(float height) {
     this -> height = height;
 }
 
+// Setter for house description variable
 void House::setDescription(string description) {
     this -> description = description;
 }
