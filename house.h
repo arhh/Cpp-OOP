@@ -17,9 +17,11 @@ class House {
         float getBreadth();
         float getHeight();
         string getDescription();
-        void setLength(int);
-        void setBreadth(int);
-        void setHeight(int);
+        
+        void setRoomCount(int);
+        void setLength(float);
+        void setBreadth(float);
+        void setHeight(float);
         void setDescription(string);
 };
 

@@ -47,6 +47,26 @@ string House::getDescription() {
     return getter(description);
 }
 
+void House::setRoomCount(int roomCount) {
+    this -> roomCount = roomCount;
+}
+
+void House::setLength(float length) {
+    this -> length = length;
+}
+
+void House::setBreadth(float breadth) {
+    this -> breadth = breadth;
+}
+
+void House::setHeight(float height) {
+    this -> height = height;
+}
+
+void House::setDescription(string description) {
+    this -> description = description;
+}
+
 int main() {
     int sampleRoomCount = 2;
     float sampleLength = 12.8;
@@ -54,6 +74,16 @@ int main() {
     float sampleHeight = 4.9;
     string sampleDescription = "This house is small with two all-purpose rooms.";
     House thing(sampleRoomCount, sampleLength, sampleBreadth, sampleHeight, sampleDescription);
+    cout << thing.getRoomCount() << endl;
+    cout << thing.getLength() << endl;
+    cout << thing.getBreadth() << endl;
+    cout << thing.getHeight() << endl;
+    cout << thing.getDescription() << endl;
+    thing.setRoomCount(5);
+    thing.setLength(21.6);
+    thing.setBreadth(38.1);
+    thing.setHeight(6);
+    thing.setDescription("This house is big with 5 rooms.");
     cout << thing.getRoomCount() << endl;
     cout << thing.getLength() << endl;
     cout << thing.getBreadth() << endl;
