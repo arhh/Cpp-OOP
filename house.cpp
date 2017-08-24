@@ -8,6 +8,7 @@ House::House(int roomCount, float length, float breadth, float height, string de
     this -> length = length;
     this -> breadth = breadth;
     this -> height = height;
+    this -> description = description;
 }
 
 House::~House() {
@@ -42,6 +43,10 @@ float House::getHeight() {
     return getter(height);
 }
 
+string House::getDescription() {
+    return getter(description);
+}
+
 int main() {
     int sampleRoomCount = 2;
     float sampleLength = 12.8;
@@ -53,5 +58,7 @@ int main() {
     cout << thing.getLength() << endl;
     cout << thing.getBreadth() << endl;
     cout << thing.getHeight() << endl;
+    cout << thing.getDescription() << endl;
     return 0;
 }
+
