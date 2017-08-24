@@ -1,20 +1,28 @@
 #include <string>
+using namespace std;
 
+// Class representing a generic house
 class House {
     private:
         int roomCount;
         float length, breadth, height;
         string description;
     public:
-        House(int, int, int, int, string);
+        House(int, float, float, float, string);
         ~House();
+        int getter(int);
+        string getter(string);
+        float getter(float);
         int getRoomCount();
-        int getLength();
-        int getBreadth();
-        int getHeight();
+        float getLength();
+        float getBreadth();
+        float getHeight();
         string getDescription();
-        void setLength(int);
-        void setBreadth(int);
-        void setHeight(int);
+        
+        void setRoomCount(int);
+        void setLength(float);
+        void setBreadth(float);
+        void setHeight(float);
         void setDescription(string);
-}
+};
+
