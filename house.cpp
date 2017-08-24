@@ -34,6 +34,14 @@ float House::getLength() {
     return getter(length);
 }
 
+float House::getBreadth() {
+    return getter(breadth);
+}
+
+float House::getHeight() {
+    return getter(height);
+}
+
 int main() {
     int sampleRoomCount = 2;
     float sampleLength = 12.8;
@@ -43,5 +51,7 @@ int main() {
     House thing(sampleRoomCount, sampleLength, sampleBreadth, sampleHeight, sampleDescription);
     cout << thing.getRoomCount() << endl;
     cout << thing.getLength() << endl;
+    cout << thing.getBreadth() << endl;
+    cout << thing.getHeight() << endl;
     return 0;
 }
