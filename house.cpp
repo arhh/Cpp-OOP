@@ -1,5 +1,6 @@
 #include "house.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 House::House(int roomCount, int length, int breadth, int height, string description) {
@@ -13,8 +14,15 @@ House::~House() {
     cout << "Demolishing the house" << endl;
 }
 
+int House::getter(int variable) {
+    return variable;
+}
+
+string House::getter(string variable) {
+    return variable;
+}
 int House::getRoomCount() {
-    return roomCount;
+    return getter(roomCount);
 }
 
 int main() {
