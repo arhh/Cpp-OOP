@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-House::House(int roomCount, int length, int breadth, int height, string description) {
+House::House(int roomCount, float length, float breadth, float height, string description) {
     this -> roomCount = roomCount;
     this -> length = length;
     this -> breadth = breadth;
@@ -21,17 +21,27 @@ int House::getter(int variable) {
 string House::getter(string variable) {
     return variable;
 }
+
+float House::getter(float variable) {
+    return variable;
+}
+
 int House::getRoomCount() {
     return getter(roomCount);
 }
 
+float House::getLength() {
+    return getter(length);
+}
+
 int main() {
     int sampleRoomCount = 2;
-    int sampleLength = 12.8;
-    int sampleBreadth = 8.5;
-    int sampleHeight = 4.9;
+    float sampleLength = 12.8;
+    float sampleBreadth = 8.5;
+    float sampleHeight = 4.9;
     string sampleDescription = "This house is small with two all-purpose rooms.";
     House thing(sampleRoomCount, sampleLength, sampleBreadth, sampleHeight, sampleDescription);
     cout << thing.getRoomCount() << endl;
+    cout << thing.getLength() << endl;
     return 0;
 }
