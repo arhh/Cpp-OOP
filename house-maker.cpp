@@ -9,7 +9,7 @@ void houseAttributeSetter();
 int promptUser(bool houseExists) {
     int userInput;
     cout << "Type the number corresponding to the action you want to perform:" << endl;
-    cout << " 1. Create House\n 2. Close house maker program" << endl;
+    cout << " 1. Create House\n 2. Close house maker program\n" << endl;
     if (houseExists) {
         cout << " 3. Get this house's room count\n 4. Get this house's length\n 5. Get this house's breadth\n 6. Get this house's height\n 7. Get this house's description\n 8. Change one of the house's attributes" << endl;
     }
@@ -18,6 +18,8 @@ int promptUser(bool houseExists) {
     
     return userInput;
 }
+
+
 
 int main() {
     cout << "Welcome to this hypothetical house maker\n" << endl;
