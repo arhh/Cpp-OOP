@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <sstream>
 #include "house.cpp"
 using namespace std;
 
@@ -19,20 +21,48 @@ int promptUser(bool houseExists) {
     return userInput;
 }
 
-
+void makeHouse() {
+    int roomCount;
+    float length, breadth, height;
+    string description;
+    stringstream input;
+    
+    cout << "Enter number of rooms in this house: " << endl;
+    cin >> input;
+    input >> roomCount;
+    
+    cout << "Enter length of this house: " << endl;
+    cin >> input;
+    input >> length;
+    
+    cout << "Enter breadth of this house: " << endl;
+    cin >> input;
+    input >> breadth;
+    
+    cout << "Enter height of this house: " << endl;
+    cin >> input;
+    input >> height;
+    
+    cout << "Enter some extended description for this house: " << endl;
+    cin >> input;
+    input >> description;
+    
+    House house(roomCount, length, breadth, height, description)
+}
 
 int main() {
     cout << "Welcome to this hypothetical house maker\n" << endl;
     
-    House house;
+    bool houseExists = false;
     int promptOutput;
         
     do {
-      promptOutput = promptUser(house != NULL);
+      promptOutput = promptUser(houseExists);
       
       switch (promptOutput) {
         case 1:
             makeHouse();
+            houseExists = true;
             break;
         case 2:
             promptOutput = 0;
