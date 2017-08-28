@@ -11,9 +11,15 @@ void houseAttributeSetter();
 int promptUser(bool houseExists) {
     int userInput;
     cout << "Type the number corresponding to the action you want to perform:" << endl;
-    cout << " 1. Create House\n 2. Close house maker program\n" << endl;
+    cout << " 1. Create House\n
+    cout << " 2. Close house maker program" << endl;
     if (houseExists) {
-        cout << " 3. Get this house's room count\n 4. Get this house's length\n 5. Get this house's breadth\n 6. Get this house's height\n 7. Get this house's description\n 8. Change one of the house's attributes" << endl;
+        cout << " 3. Get this house's room count\n
+        cout << " 4. Get this house's length\n
+        cout << " 5. Get this house's breadth\n
+        cout << " 6. Get this house's height\n
+        cout << " 7. Get this house's description\n
+        cout << " 8. Change one of the house's attributes" << endl;
     }
     cout << "> ";
     cin >> userInput;
@@ -26,6 +32,8 @@ void makeHouse() {
     float length, breadth, height;
     string description;
     stringstream input;
+    
+    cout << "\n\nSpecify the following details about the house\n" << endl;
     
     cout << "Enter number of rooms in this house: " << endl;
     cin >> input;
@@ -48,6 +56,54 @@ void makeHouse() {
     input >> description;
     
     House house(roomCount, length, breadth, height, description)
+}
+
+void houseAttributeSetter() {
+    int userInput;    
+    
+    cout << "\n\n---Welcome to the House Attribute Setter tool---" << endl;
+    cout << "Select a characteristic of the house you would like to change:" << endl:
+    cout << "1. Room count\n"
+    cout << "2. Length\n"
+    cout << "3. Breadth\n"
+    cout << "4. Height\n"
+    cout << "5. Description" << endl;
+    cin >> userInput;
+    
+    switch (userInput) {
+        case 1:
+            float newRoomCount;
+            cout << "Enter updated room count of house: " << endl;
+            cin newRoomCount;
+            house.setRoomCount(newRoomCount);
+            break;
+        case 2:
+            float newLength;
+            cout << "Enter updated length of house: " << endl;
+            cin newLength;
+            house.setLength(newLength);
+            break;
+        case 3:
+            float newBreadth;
+            cout << "Enter updated breadth of house: " << endl;
+            cin newBreadth;
+            house.setBreadth(newBreadth);
+            break;
+        case 4:
+            float newHeight;
+            cout << "Enter updated height of house: " << endl;
+            cin newHeight;
+            house.setHeight(newHeight);
+            break;
+        case 4:
+            float newDescription;
+            cout << "Enter updated description of house: " << endl;
+            cin newDescription;
+            house.setDescription(newDescription);
+            break;
+        default:
+            cout << "Invalid option selected" << endl;
+      }
 }
 
 int main() {
