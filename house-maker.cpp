@@ -4,6 +4,8 @@ using namespace std;
 
 int main() {
     int userIntendedTask;
+    House house(0, 0, 0, 0, "");
+    
     cout << "\n\n ==== Welcome to House Maker ==== \n" << endl;
     
     do {
