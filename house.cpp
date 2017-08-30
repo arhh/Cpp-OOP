@@ -80,6 +80,7 @@ void House::setDescription(string description) {
     this -> description = description;
 }
 
+/*
 int main() {
     int sampleRoomCount = 2;
     float sampleLength = 12.8;
@@ -104,4 +105,5 @@ int main() {
     cout << thing.getDescription() << endl;
     return 0;
 }
+*/
 
