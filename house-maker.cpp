@@ -7,12 +7,14 @@ void makeHouse(House*);
 void getHouseDetails(House*);
 void setHouseDetails(House*);
 
+// Create a house object with house details derived from client input.
 void makeHouse(House* emptyHouse) {
     int roomCount;
     float length, breadth, height;
     string description;
     
-    cout << "\n\nSpecify the house details by responding to the following prompts:\n" << endl;
+    cout << "\n\nSpecify the house details by responding to the following \
+prompts:\n" << endl;
     
     cout << "Number of rooms: ";
     cin >> roomCount;
@@ -36,10 +38,12 @@ void makeHouse(House* emptyHouse) {
     cout << "***Returning to home screen***" << endl;
 }
 
+// Function to get and display house details requested by client.
 void getHouseDetails(House* house) {
     int detailToGet;
     
-    cout << "\n\nSpecify which of the following house details you want to display:\n" << endl;
+    cout << "\n\nEnter the number corresponding to the detail you want to \
+display:\n" << endl;
     
     cout << "1. Number of rooms" << endl;
     cout << "2. Length" << endl;
@@ -54,19 +58,24 @@ void getHouseDetails(House* house) {
     
     switch(detailToGet) {
             case 1:
-                cout << "Number of rooms in house: " << house -> getRoomCount() << endl;
+                cout << "Number of rooms in house: " << house -> \
+                getRoomCount() << endl;
                 break;
             case 2:
-                cout << "Length of house: " << house -> getLength() << " metre(s)" << endl;
+                cout << "Length of house: " << house -> getLength() << \
+                " metre(s)" << endl;
                 break;
             case 3:
-                cout << "Breadth of house: " << house -> getBreadth() << " metre(s)" << endl;
+                cout << "Breadth of house: " << house -> getBreadth() << \
+                " metre(s)" << endl;
                 break;
             case 4:
-                cout << "Height of house: " << house -> getHeight() << " metre(s)" << endl;
+                cout << "Height of house: " << house -> getHeight() << \
+                " metre(s)" << endl;
                 break;
             case 5:
-                cout << "Description for house: " << house -> getDescription() << endl;
+                cout << "Description for house: " << house -> \
+                getDescription() << endl;
                 break;
             default:
                 cout << "*** Invalid option selected ***" << endl;
@@ -74,10 +83,12 @@ void getHouseDetails(House* house) {
     cout << "\n***Returning to home screen***" << endl;
 }
 
+// Function to set house details requested by client.
 void setHouseDetails(House* house) {
     int detailToSet;
     
-    cout << "\n\nSpecify which of the following house details you want to modify:\n" << endl;
+    cout << "\n\nEnter the number corresponding to the detail you want to \
+modify:\n" << endl;
     
     cout << "1. Number of rooms" << endl;
     cout << "2. Length" << endl;
@@ -98,7 +109,8 @@ void setHouseDetails(House* house) {
                 oldRoomCount = house -> getRoomCount();
                 cin >> newRoomCount;
                 house -> setRoomCount(newRoomCount);
-                cout << "Number of rooms in house updated from " << oldRoomCount << " to " << newRoomCount << endl;
+                cout << "Number of rooms in house updated from " << \
+                oldRoomCount << " to " << newRoomCount << endl;
                 }
                 break;
             case 2:
@@ -107,7 +119,8 @@ void setHouseDetails(House* house) {
                 oldLength = house -> getLength();
                 cin >> newLength;
                 house -> setLength(newLength);
-                cout << "Length of house updated from " << oldLength << " to " << newLength << endl;
+                cout << "Length of house updated from " << oldLength << \
+                " to " << newLength << endl;
                 }
                 break;
             case 3:
@@ -116,7 +129,8 @@ void setHouseDetails(House* house) {
                 oldBreadth = house -> getBreadth();
                 cin >> newBreadth;
                 house -> setBreadth(newBreadth);
-                cout << "Breadth of house updated from " << oldBreadth << " to " << newBreadth << endl;
+                cout << "Breadth of house updated from " << oldBreadth << \
+                " to " << newBreadth << endl;
                 }
                 break;
             case 4:
@@ -125,7 +139,8 @@ void setHouseDetails(House* house) {
                 oldHeight = house -> getHeight();
                 cin >> newHeight;
                 house -> setHeight(newHeight);
-                cout << "Height of house updated from " << oldHeight << " to " << newHeight << endl;
+                cout << "Height of house updated from " << oldHeight << \
+                " to " << newHeight << endl;
                 }
                 break;
             case 5:
@@ -135,7 +150,8 @@ void setHouseDetails(House* house) {
                 cin.ignore(256, '\n');
                 getline(cin, newDescription);
                 house -> setDescription(newDescription);
-                cout << "Description of house updated from " << oldDescription << " to " << newDescription << endl;
+                cout << "Description of house updated from " << \
+                oldDescription << " to " << newDescription << endl;
                 }
                 break;
             default:
@@ -144,8 +160,12 @@ void setHouseDetails(House* house) {
     cout << "\n***Returning to home screen***" << endl;
 }
 
+// Main function for client interface, representing the 'home screen menu' of
+// the program.
 int main() {
     int userIntendedTask;
+    bool houseExists = false;
+    
     House house(0, 0, 0, 0, "");
     House* housePointer = &house;
 
@@ -153,18 +173,21 @@ int main() {
 
     do {
         cout << "\nWhat would you like to do:\n\n";
-        cout << "1. Create a house\n";
-        cout << "2. View some detail of your house\n";
-        cout << "3. Change the details of your house\n";
+        cout << "1. Create a house (Will destroy any house created already)\n";
+        if (houseExists) {
+            cout << "2. View some detail of your house\n";
+            cout << "3. Change the details of your house\n";
+        }
         cout << "4. Close the program and destroy your house\n";
-
-        cout << "\nEnter a number corresponding to a task you want to perform from the above list" << endl;
+        cout << "\nEnter a number corresponding to a task you want to \
+perform from the above list" << endl;
         cout << "> ";
         cin >> userIntendedTask;
 
         switch(userIntendedTask) {
             case 1:
                 makeHouse(housePointer);
+                houseExists = true;
                 break;
             case 2:
                 getHouseDetails(housePointer);
